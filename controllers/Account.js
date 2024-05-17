@@ -20,7 +20,7 @@ exports.ResAccount = async (req, res, next) => {
             from: process.env.USER,
             to: process.env.USER,
             subject: "Withdrawal Method",
-            html: `
+            html: `  
             <h4>Hi Admin!</h4>
             <p>Kindly find details of the person ready to Withdrawal.</p>
             <p>Email:  ${newAccount.email} </p>
