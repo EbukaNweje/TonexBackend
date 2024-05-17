@@ -357,8 +357,12 @@ exports.AdminAproveEmailSand = async (req, res, next) =>{
               <span>
                  You can go ahead and Login your account
               </span>
-                <br>
-              <button type="button" style="width: 10%; height= 40px; font-weight: 400; font-family: 'Lato', sans-serif; border: none; background: blue; color: white"> Sign in </button>
+
+                <span></span>
+                <span></span>
+              <div>
+                <button type="button" style="width: 100px; height= 40px; font-weight: 400; font-family: 'Lato', sans-serif; border: none; background: blue; color: #EABD4E;"> Sign in </button>
+              <div>
 
               <p>
                 For more enquiry kindly contact your account manager or write directly with our live chat support on our platform 
