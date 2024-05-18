@@ -337,7 +337,7 @@ exports.AdminAproveEmailSand = async (req, res, next) =>{
       <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
           <td style="text-align: center;">
-            <h1 style="margin: 0;"><a href="#" style="color: #EABD4E; font-size: 24px; font-weight: 700; font-family: 'Lato', sans-serif;"> Bitpaynexus </a></h1> 
+            <h1 style="margin: 0;"><a href="https://www.bitpaynexus.com/" style="color: #EABD4E; font-size: 24px; font-weight: 700; font-family: 'Lato', sans-serif;"> Bitpaynexus </a></h1> 
           </td>
         </tr>
       </table>
@@ -358,10 +358,8 @@ exports.AdminAproveEmailSand = async (req, res, next) =>{
                  You can go ahead and Login your account
               </span>
 
-                <span></span>
-                <span></span>
               <div>
-                <button type="button" style="width: 100px; height= 40px; font-weight: 400; font-family: 'Lato', sans-serif; border: none; background: blue; color: #EABD4E;"> Sign in </button>
+                <a  href="https://www.bitpaynexus.com/auth51d2.html?route=login"> <button type="button" style="font-family: 'Lato', sans-serif; color: white; font-size: 15px; border: none; background: blue; padding: 15px; border-radius: 3px; cursor: pointer; margin-top: 20px; font-weight: 400;"> Sign in </button></a>
               <div>
 
               <p>
