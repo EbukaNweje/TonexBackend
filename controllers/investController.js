@@ -123,7 +123,7 @@ const userPlanModel = require('../models/userPlanModel');
 const luxon = require('luxon')
 
 // Function to add 0.4% of the money invested after every 24 hours
-const addInterest = async (userId, planId, amount) => {
+const addInterest = async (userId, planId, amount, totalDailyInterest) => {
     try {
         const user = await UserModel.findById(userId);
         const plan = await PlansModel.findById(planId);
@@ -178,7 +178,7 @@ const addInterest = async (userId, planId, amount) => {
 exports.makeInvestment = async (req, res) => {
     try {
         const { userId } = req.params;
-        const { planId, amount } = req.body;
+        const { planId, amount, totalDailyInterest } = req.body;
 
         const user = await UserModel.findById(userId);
         const plan = await PlansModel.findById(planId);
@@ -284,7 +284,7 @@ addInterest(userId, planId, amount);
 
 // Schedule interest calculation every 24 hours until the expiration date
 setInterval(() => {
-    addInterest(userId, planId, amount);
+    addInterest(userId, planId, amount, totalDailyInterest);
 }, interval);
 
 
