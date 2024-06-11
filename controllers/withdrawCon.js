@@ -76,7 +76,7 @@ exports.withdraw = async (req, res) => {
         }
         if(withdraw.status === 'confirmed'){
         // Add the withdrew amount to the user's account balance
-        withdrawer.accountBalance += newAmount;
+        withdrawer.accountBalance -= newAmount;
         }
 
 

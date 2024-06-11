@@ -136,8 +136,8 @@ exports.confirmWithdraw = async (req, res) => {
         }
 
         // Check if the withdraw is already confirmed
-        if (withdraw.status === 'confirmed') {
-            return res.status(400).json({ message: 'withdrawal is already confirmed' });
+        if (withdraw.status === 'Approved') {
+            return res.status(400).json({ message: 'withdrawal is already Approved' });
         }
 
         // Find the user associated with the withdraw
@@ -146,8 +146,8 @@ exports.confirmWithdraw = async (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        // Update the withdraw status to 'confirmed'
-        withdraw.status = 'confirmed';
+        // Update the withdraw status to 'Approved'
+        withdraw.status = 'Approved';
         await withdraw.save();
 
         // // Update the user's account balance
@@ -157,7 +157,7 @@ exports.confirmWithdraw = async (req, res) => {
         await user.save();
 
         // Return success response
-        res.status(200).json({ message: 'withdrawal confirmed successfully' });
+        res.status(200).json({ message: 'withdrawal Approved successfully' });
     } catch (err) {
         // Handle errors
         console.error(err);
