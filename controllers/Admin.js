@@ -151,7 +151,7 @@ exports.confirmWithdraw = async (req, res) => {
         await withdraw.save();
 
         // // Update the user's account balance
-        user.accountBalance += parseFloat(withdraw.amount);
+        user.accountBalance -= parseFloat(withdraw.amount);
         await user.save();
         user.totalWithdrawal += parseFloat(withdraw.amount);
         await user.save();
