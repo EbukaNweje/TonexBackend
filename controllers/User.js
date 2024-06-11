@@ -324,8 +324,8 @@ exports.updateTotalEarned = async (req,res, next) => {
 
 exports.getUserDeposits = async (req, res) => {
     try {
-        const { userId } = req.params;
-        const user = await User.findById(userId).populate('Transactions.deposits');
+        const { id } = req.params;
+        const user = await User.findById(id).populate('Transactions.deposits');
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -342,8 +342,8 @@ exports.getUserDeposits = async (req, res) => {
 
 exports.getUserInvestments = async (req, res) => {
     try {
-        const { userId } = req.params;
-        const user = await User.findById(userId).populate('Transactions.investments');
+        const { id } = req.params;
+        const user = await User.findById(id).populate('Transactions.investments');
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -360,8 +360,8 @@ exports.getUserInvestments = async (req, res) => {
 
 exports.getUserInterests = async (req, res) => {
     try {
-        const { userId } = req.params;
-        const user = await User.findById(userId).populate('Transactions.interests');
+        const { id } = req.params;
+        const user = await User.findById(id).populate('Transactions.interests');
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
@@ -378,8 +378,8 @@ exports.getUserInterests = async (req, res) => {
 
 exports.getUserWithdrawals = async (req, res) => {
     try {
-        const { userId } = req.params;
-        const user = await User.findById(userId).populate('Transactions.withdrawals');
+        const { id } = req.params;
+        const user = await User.findById(id).populate('Transactions.withdrawals');
         if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
