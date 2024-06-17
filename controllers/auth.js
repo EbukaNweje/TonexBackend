@@ -314,73 +314,62 @@ exports.AdminAproveEmailSand = async (req, res, next) =>{
       to: UserEmail.email,
       subject: "Successful Sign Up!",
     html: `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-  <meta charset="utf-8"> <!-- utf-8 works for most cases -->
-  <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-  <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-  <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-  </head>
-  <body style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f1f1f1;">
-  <center style="width: 100%; background-color: #f1f1f1;">
-  <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-  &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-  </div>
-  <div style="max-width: 600px; margin: 0 auto;">
-  <!-- BEGIN BODY -->
-  <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-  <tr>
-    <td valign="top" style="padding: 1em 2.5em 0 2.5em; background-color: #ffffff;">
-      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <td style="text-align: center;">
-            <h1 style="margin: 0;"><a href="https://www.bitpaynexus.com/" style="color: #EABD4E; font-size: 24px; font-weight: 700; font-family: 'Lato', sans-serif;"> Bitpaynexus </a></h1> 
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr><!-- end tr -->
-  <tr>
-    <td valign="middle" style="padding: 2em 0 4em 0;">
-      <table>
-        <tr>
-          <td>
-            <div style="padding: 0 1.5em; text-align: center;">
-              <h3 style="font-family: 'Lato', sans-serif; color: black; font-size: 30px; margin-bottom: 0; font-weight: 400;">Hi ${UserEmail.fullName}!</h3>
-              <h4 style="font-family: 'Lato', sans-serif; font-size: 24px; font-weight: 300;">Welcome to Bitpaynexus, your Number 1 online trading platform.</h4>
-              <span>
-                Your Trading account has been set up successfully 
-              </span>
-              <span>
-                 You can go ahead and Login your account
-              </span>
-
-              <div>
-                <a  href="https://www.bitpaynexus.com/auth51d2.html?route=login"> <button type="button" style="font-family: 'Lato', sans-serif; color: white; font-size: 15px; border: none; background: blue; padding: 15px; border-radius: 3px; cursor: pointer; margin-top: 20px; font-weight: 400;"> Sign in </button></a>
-              <div>
-
-              <p>
-                For more enquiry kindly contact your account manager or write directly with our live chat support on our platform 
-               <br> or you can send a direct mail to us at <span style="color: blue">${process.env.USER}.</span></p>
-
-               <p>
-                Thank You for choosing our platform and we wish you a successful trading.
-               </p>
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center; flex-direction: column; background-color: whitesmoke; height: 120vh; width: 100%;">
+    <div style="height: 30%; background-color: #21007F; width: 100%;">
+        <div style=" width: 100%; height: 18%; display: flex; align-items: space-around; justify-content: center;">
+            <div style=" width: 54%; height: 100%; display: flex; align-items: center; justify-content: flex-start;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 26%;">
+                    <img src="Call.png" alt="">
+                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">+1 504-332-9455</p>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 33%;">
+                    <img src="Container.png" alt="">
+                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">support@bitpaynexus.com</p>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 40%;">
+                    <img src="loc.png" alt="">
+                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">18 Eastbourne Rd, United Kingdom</p>
+                </div>
             </div>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr><!-- end tr -->
-  <!-- 1 Column Text + Button : END -->
-  </table>
-  </div>
-  </center>
-  </body>
-  </html> 
+            <div style=" width: 20%; height: 100%; display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
+                <img src="facebook.png" alt="" style="width: 30px;">
+                <img src="twitter.png" alt="" style="width: 30px;">
+                <img src="linkedin.png" alt="" style="width: 30px;">
+            </div>
+        </div>
+        <div style=" width: 100%; height: 80%; display: flex; justify-content: center; align-items: center; gap: 5px;">
+            <img src="footer-logo.png.png" alt="">
+            <h1 style="color: #eb6a07; font-size: 50px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: 400;">Bitpaynexus</h1>
+        </div>
+    </div>
+    <div style="height: 45%; width: 100%; display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; gap:5px;">
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px; ">Hi ${UserEmail.fullName},</p>
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">Welcome to Bitpaynexus, your Number 1 online trading platform. <br><br> Your Trading account has been set up successfully <br><br>You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.</p>
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">For more enquiry kindly contact your account manager or write directly with our live chat support on our platform 
+            <br> or you can send a direct mail to us at <span style="color: #4c7fff;">${process.env.USER}</span></p>
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">Thank You for choosing our platform and we wish you a successful trading.
+</p>
+    </div>
+
+    </div>
+    <div style="height: 25%; background-color: #21007F; width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <div style="height: 60%; width: 30%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <img src="footer-logo.png.png" alt="" style="width: 50px;">
+            <p style="color: white; text-align: center; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+        </div>
+        <div style="height: 20%; width: 30%;  display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <p style="color: white; text-align: center; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 100;">© Copyright 2024 Bitpaynexus field All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
      
       `,
   
@@ -441,66 +430,62 @@ exports.signupEmailSand = async (req, res, next) =>{
     <html lang="en">
     <head>
   <meta charset="utf-8"> <!-- utf-8 works for most cases -->
-  <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-  <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-  <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-  </head>
-  <body style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f1f1f1;">
-  <center style="width: 100%; background-color: #f1f1f1;">
-  <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-  &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-  </div>
-  <div style="max-width: 600px; margin: 0 auto;">
-  <!-- BEGIN BODY -->
-  <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-  <tr>
-    <td valign="top" style="padding: 1em 2.5em 0 2.5em; background-color: #ffffff;">
-      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <td style="text-align: center;">
-            <h1 style="margin: 0;"><a href="#" style="color: #EABD4E; font-size: 24px; font-weight: 700; font-family: 'Lato', sans-serif;"> Bitpaynexus </a></h1> 
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr><!-- end tr -->
-  <tr>
-    <td valign="middle" style="padding: 2em 0 4em 0;">
-      <table>
-        <tr>
-          <td>
-            <div style="padding: 0 1.5em; text-align: center;">
-              <h3 style="font-family: 'Lato', sans-serif; color: black; font-size: 30px; margin-bottom: 0; font-weight: 400;">Hi ${UserEmail.fullName}!</h3>
-              <h4 style="font-family: 'Lato', sans-serif; font-size: 24px; font-weight: 300;">Welcome to Bitpaynexus, your Number 1 online trading platform.</h4>
-              <span>
-                Your Trading account has been set up successfully 
-              </span>
-              <span>
-                 You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.
-              </span>
-
-              <p>
-                For more enquiry kindly contact your account manager or write directly with our live chat support on our platform 
-               <br> or you can send a direct mail to us at <span style="color: blue">${process.env.USER}.</span></p>
-
-               <p>
-                Thank You for choosing our platform and we wish you a successful trading.
-               </p>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center; flex-direction: column; background-color: whitesmoke; height: 120vh; width: 100%;">
+    <div style="height: 30%; background-color: #21007F; width: 100%;">
+        <div style=" width: 100%; height: 18%; display: flex; align-items: space-around; justify-content: center;">
+            <div style=" width: 54%; height: 100%; display: flex; align-items: center; justify-content: flex-start;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 26%;">
+                    <img src="Call.png" alt="">
+                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">+1 504-332-9455</p>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 33%;">
+                    <img src="Container.png" alt="">
+                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">support@bitpaynexus.com</p>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 40%;">
+                    <img src="loc.png" alt="">
+                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">18 Eastbourne Rd, United Kingdom</p>
+                </div>
             </div>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr><!-- end tr -->
-  <!-- 1 Column Text + Button : END -->
-  </table>
-  </div>
-  </center>
-  </body>
-  </html> 
-     
+            <div style=" width: 20%; height: 100%; display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
+                <img src="facebook.png" alt="" style="width: 30px;">
+                <img src="twitter.png" alt="" style="width: 30px;">
+                <img src="linkedin.png" alt="" style="width: 30px;">
+            </div>
+        </div>
+        <div style=" width: 100%; height: 80%; display: flex; justify-content: center; align-items: center; gap: 5px;">
+            <img src="footer-logo.png.png" alt="">
+            <h1 style="color: #eb6a07; font-size: 50px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: 400;">Bitpaynexus</h1>
+        </div>
+    </div>
+    <div style="height: 45%; width: 100%; display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; gap:5px;">
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px; ">Hi ${UserEmail.fullName},</p>
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">Welcome to Bitpaynexus, your Number 1 online trading platform. <br><br> Your Trading account has been set up successfully <br><br>You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.</p>
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">For more enquiry kindly contact your account manager or write directly with our live chat support on our platform 
+            <br> or you can send a direct mail to us at <span style="color: #4c7fff;">${process.env.USER}</span></p>
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">Thank You for choosing our platform and we wish you a successful trading.
+</p>
+    </div>
+
+    </div>
+    <div style="height: 25%; background-color: #21007F; width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <div style="height: 60%; width: 30%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <img src="footer-logo.png.png" alt="" style="width: 50px;">
+            <p style="color: white; text-align: center; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+        </div>
+        <div style="height: 20%; width: 30%;  display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <p style="color: white; text-align: center; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 100;">© Copyright 2024 Bitpaynexus field All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
       `,
   
   }
@@ -556,55 +541,58 @@ exports.loginEmailSand = async (req, res, next) =>{
       subject: "Successful Login!",
     html: `
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-  <meta charset="utf-8"> <!-- utf-8 works for most cases -->
-  <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
-  <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
-  <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-  </head>
-  <body style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #f1f1f1;">
-  <center style="width: 100%; background-color: #f1f1f1;">
-  <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
-  &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-  </div>
-  <div style="max-width: 600px; margin: 0 auto;">
-  <!-- BEGIN BODY -->
-  <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-  <tr>
-    <td valign="top" style="padding: 1em 2.5em 0 2.5em; background-color: #ffffff;">
-      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-        <tr>
-          <td style="text-align: center;">
-            <h1 style="margin: 0;"><a href="#" style="color: #EABD4E; font-size: 24px; font-weight: 700; font-family: 'Lato', sans-serif;"> Bitpaynexus  </a></h1> 
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr><!-- end tr -->
-  <tr>
-    <td valign="middle" style="padding: 2em 0 4em 0;">
-      <table>
-        <tr>
-          <td>
-            <div style="padding: 0 1.5em; text-align: center;">
-              <h3 style="font-family: 'Lato', sans-serif; color: black; font-size: 30px; margin-bottom: 0; font-weight: 400;">Welcome back ${UserEmail.fullName}!</h3>
-              <h4 style="font-family: 'Lato', sans-serif; font-size: 24px; font-weight: 300;">You have successfully logged in to,<br/> <span style=" font-weight: 500; color:#EABD4E; margin-top:-10px; font-size: 20px;"> Bitpaynexus /span></h4>
-              <span>If you did not initiate this, change your password immediately and send our Customer Center an email to <br/> <p style="color: blue">${process.env.USER}</p></span>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center; flex-direction: column; background-color: whitesmoke; height: 120vh; width: 100%;">
+    <div style="height: 30%; background-color: #21007F; width: 100%;">
+        <div style=" width: 100%; height: 18%; display: flex; align-items: space-around; justify-content: center;">
+            <div style=" width: 54%; height: 100%; display: flex; align-items: center; justify-content: flex-start;">
+                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 26%;">
+                    <img src="Call.png" alt="">
+                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">+1 504-332-9455</p>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 33%;">
+                    <img src="Container.png" alt="">
+                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">support@bitpaynexus.com</p>
+                </div>
+                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 40%;">
+                    <img src="loc.png" alt="">
+                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">18 Eastbourne Rd, United Kingdom</p>
+                </div>
             </div>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr><!-- end tr -->
-  <!-- 1 Column Text + Button : END -->
-  </table>
-  </div>
-  </center>
-  </body>
-  </html> 
+            <div style=" width: 20%; height: 100%; display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
+                <img src="facebook.png" alt="" style="width: 30px;">
+                <img src="twitter.png" alt="" style="width: 30px;">
+                <img src="linkedin.png" alt="" style="width: 30px;">
+            </div>
+        </div>
+        <div style=" width: 100%; height: 80%; display: flex; justify-content: center; align-items: center; gap: 5px;">
+            <img src="footer-logo.png.png" alt="">
+            <h1 style="color: #eb6a07; font-size: 50px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: 400;">Bitpaynexus</h1>
+        </div>
+    </div>
+    <div style="height: 45%; width: 100%; display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; gap:5px;">
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px; ">Welcome back, ${UserEmail.fullName},</p>
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">You have successfully logged in to Bitpaynexus<br>
+        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">If you did not initiate this, change your password immediately and send our Customer Center an email at <span style="color: #4c7fff;">${process.env.USER}</span></p>
+    </div>
+
+    </div>
+    <div style="height: 25%; background-color: #21007F; width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <div style="height: 60%; width: 30%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <img src="footer-logo.png.png" alt="" style="width: 50px;">
+            <p style="color: white; text-align: center; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+        </div>
+        <div style="height: 20%; width: 30%;  display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <p style="color: white; text-align: center; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 100;">© Copyright 2024 Bitpaynexus field All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
      
       `,
   }
