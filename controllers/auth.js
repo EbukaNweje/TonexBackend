@@ -495,20 +495,15 @@ exports.signupEmailSand = async (req, res, next) =>{
                     <tr>
                         <td style="padding: 10px;">
                             <div class="contact-info">
-                                <p><img src="Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
-                                <p><img src="Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
-                                <p><img src="loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
-                            </div>
-                            <div class="social-icons">
-                                <img src="facebook.png" alt="">
-                                <img src="twitter.png" alt="">
-                                <img src="linkedin.png" alt="">
+                                <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
+                                <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td style="padding: 20px 0;">
-                            <img src="footer-logo.png" alt="">
+                            <img src="https://i.ibb.co/KKGS4Cw/footer-logo.png" alt="">
                             <h1 style="color: #eb6a07; font-size: 40px; font-family: Impact, sans-serif; font-weight: 500">Bitpaynexus</h1>
                         </td>
                     </tr>
@@ -524,7 +519,7 @@ exports.signupEmailSand = async (req, res, next) =>{
     
             <div class="footer">
                 <div class="footer-content">
-                    <div class="footer-logo">
+                    <div class="https://i.ibb.co/KKGS4Cw/footer-logo.png">
                         <img src="footer-logo.png" alt="">
                     </div>
                     <div class="footer-info">
