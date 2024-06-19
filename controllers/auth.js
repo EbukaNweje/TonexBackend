@@ -428,128 +428,115 @@ exports.signupEmailSand = async (req, res, next) =>{
     html: `
     
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: whitesmoke;
-    }
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        background-color: whitesmoke;
-        min-height: 100vh;
-    }
-    .header, .footer {
-        width: 100%;
-        background-color: #21007F;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-    }
-    .header-content, .footer-content {
-        width: 90%;
-        margin: auto;
-        max-width: 600px;
-    }
-    .content {
-        width: 90%;
-        margin: auto;
-        max-width: 600px;
-        background-color: white;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin-top: 20px;
-        text-align: left;
-    }
-    .header .contact, .header .social {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .contact div, .social img {
-        margin: 5px;
-    }
-    .footer .footer-logo img {
-        width: 50px;
-    }
-    .footer p {
-        margin: 5px 0;
-    }
-    .footer-logo, .footer-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    @media (max-width: 600px) {
-        .header .contact, .header .social {
-            flex-direction: column;
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: whitesmoke;
+        }
+        .container {
+            width: 100%;
+            background-color: whitesmoke;
+            padding: 0;
+            margin: 0;
+        }
+        .header, .footer {
+            width: 100%;
+            background-color: #21007F;
+            color: white;
             text-align: center;
         }
-        .header-content, .footer-content, .content {
-            width: 95%;
+        .content {
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-    }
-</style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <div class="header-content">
-                <div class="contact">
-                    <div>
-                        <img src="Call.png" alt="" style="width: 20px;">
-                        <p>+1 504-332-9455</p>
+        .footer-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-info, .social-icons {
+            display: inline-block;
+            vertical-align: top;
+            width: 48%;
+            margin-bottom: 20px;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 0 5px;
+        }
+        .footer-logo img {
+            width: 50px;
+        }
+        .footer-logo, .footer-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td style="padding: 10px;">
+                            <div class="contact-info">
+                                <p><img src="Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                <p><img src="Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
+                                <p><img src="loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
+                            </div>
+                            <div class="social-icons">
+                                <img src="facebook.png" alt="">
+                                <img src="twitter.png" alt="">
+                                <img src="linkedin.png" alt="">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px 0;">
+                            <img src="footer-logo.png" alt="">
+                            <h1 style="color: #eb6a07; font-size: 40px; font-family: Impact, sans-serif; font-weight: 500">Bitpaynexus</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    
+            <div class="content">
+                <p>Hi ${UserEmail.fullName},</p>
+                <p>Welcome to Bitpaynexus, your Number 1 online trading platform.<br><br>Your Trading account has been set up successfully.<br><br>You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.</p>
+                <p>For more enquiries, kindly contact your account manager or use our live chat support on our platform. You can also send a direct mail to us at <span style="color: #4c7fff;">${process.env.USER}</span></p>
+                <p>Thank you for choosing our platform. We wish you successful trading.</p>
+            </div>
+    
+            <div class="footer">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="footer-logo.png" alt="">
                     </div>
-                    <div>
-                        <img src="Container.png" alt="" style="width: 20px;">
-                        <p>support@bitpaynexus.com</p>
+                    <div class="footer-info">
+                        <p>We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+                        <p>© Copyright 2024 Bitpaynexus. All Rights Reserved.</p>
                     </div>
-                    <div>
-                        <img src="loc.png" alt="" style="width: 20px;">
-                        <p>18 Eastbourne Rd, United Kingdom</p>
-                    </div>
-                </div>
-                <div>
-                    <img src="footer-logo.png.png" alt="">
-                    <h1 style="color: #eb6a07; font-size: 45px; font-family: Impact, sans-serif; font-weight: 500;">Bitpaynexus</h1>
                 </div>
             </div>
         </div>
-
-        <div class="content">
-            <p>Hi ${UserEmail.fullName},</p>
-            <p>Welcome to Bitpaynexus, your Number 1 online trading platform.<br><br>Your Trading account has been set up successfully.<br><br>You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.</p>
-            <p>For more enquiries, kindly contact your account manager or use our live chat support on our platform. You can also send a direct mail to us at <span style="color: #4c7fff;">${process.env.USER}</span></p>
-            <p>Thank you for choosing our platform. We wish you successful trading.</p>
-        </div>
-
-        <div class="footer">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="/footer-logo.png.png" alt="">
-                </div>
-                <div class="footer-info">
-                    <p>We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
-                    <p>© Copyright 2024 Bitpaynexus. All Rights Reserved.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
+    
       `,
   
   }
