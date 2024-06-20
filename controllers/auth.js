@@ -720,7 +720,7 @@ exports.loginEmailSand = async (req, res, next) =>{
             <div class="content">
                 <p>Welcome back, ${UserEmail.fullName},</p>
                 <p>You have successfully logged in to Bitpaynexus<br><br><br><br>You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.</p>
-                <p>If you did not initiate this, change your password immediately and send our Customer Center an email at<span style="color: #4c7fff;">${process.env.USER}</span></p>
+                <p>If you did not initiate this, change your password immediately and send our Customer Center an email at <span style="color: #4c7fff;">${process.env.USER}</span></p>
                 <p>Thank you for choosing our platform. We wish you successful trading.</p>
             </div>
     
