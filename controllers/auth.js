@@ -787,14 +787,119 @@ exports.forgotPassword = async (req, res, next) => {
             'host',
           )}/api/restLink/${userEmail._id}/${token}`
 
-          const message = `Forgot your password? Submit patch request with your new password to: ${resetURL}.
-           \nIf you didnt make this request, simply ignore. Password expires in 10 minutes`
+          // const message = `Forgot your password? Submit patch request with your new password to: ${resetURL}.
+          //  \nIf you didnt make this request, simply ignore. Password expires in 10 minutes`
 
           const mailOptions ={
             from: process.env.USER,
             to: userEmail.email,
             subject: 'Your password reset token is valid for 10 mins',
-            text: message,
+            // text: message,
+            html: `
+
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <style>
+                body {
+                    margin: 0;
+                    padding: 0;
+                    font-family: Arial, Helvetica, sans-serif;
+                    background-color: whitesmoke;
+                }
+                .container {
+                    width: 100%;
+                    background-color: whitesmoke;
+                    padding: 0;
+                    margin: 0;
+                }
+                .header, .footer {
+                    width: 100%;
+                    background-color: #21007F;
+                    color: white;
+                    text-align: center;
+                }
+                .content {
+                    width: 100%;
+                    max-width: 600px;
+                    background-color: white;
+                    padding: 20px;
+                    margin: 20px auto;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                .footer-content {
+                    padding: 20px;
+                    text-align: center;
+                }
+                .contact-info, .social-icons {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 48%;
+                    margin-bottom: 20px;
+                }
+                .social-icons img {
+                    width: 30px;
+                    margin: 0 5px;
+                }
+                .footer-logo img {
+                    width: 50px;
+                }
+                .footer-logo, .footer-info {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                .footer p {
+                    margin: 5px 0;
+                }
+            </style>
+            </head>
+            <body>
+                <div class="container">
+                    <div class="header">
+                        <table width="100%" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td style="padding: 10px;">
+                                    <div class="contact-info">
+                                        <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                        <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
+                                        <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 20px 0;">
+                                    <img src="https://i.ibb.co/KKGS4Cw/footer-logo.png" alt="">
+                                    <h1 style="color: #eb6a07; font-size: 40px; font-family: Impact, sans-serif; font-weight: 500">Bitpaynexus</h1>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+            
+                    <div class="content">                      
+                        <p>Forgot your password?<br><br><br><br>Submit patch request with your new password to: ${resetURL}</p>
+                        <p>If you didnt make this request, simply ignore. <br><br>Password expires in 10 minutes.</p>
+                        <p>Thank you for choosing our platform. We wish you successful trading.</p>
+                    </div>
+            
+                    <div class="footer">
+                        <div class="footer-content">
+                            <div class="https://i.ibb.co/KKGS4Cw/footer-logo.png">
+                                <img src="footer-logo.png" alt="">
+                            </div>
+                            <div class="footer-info">
+                                <p>We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+                                <p>© Copyright 2024 Bitpaynexus. All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+            </html>
+             
+              `,
         }
         transporter.sendMail(mailOptions,(err, info)=>{
             if(err){
@@ -849,3 +954,548 @@ res.status(200).json({
   next(err);
 }
 }
+
+
+
+
+exports.depositEmailSend = async (req, res, next) =>{
+  try{
+    const id = req.params.id
+    const amount = req.body.amount
+    const userInfo = await User.findById(id);
+  
+    const mailOptions ={
+      from: process.env.USER,
+      to: process.env.USER, 
+      subject: "Successful Deposit",
+    html: `
+     
+        <!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+          body {
+              margin: 0;
+              padding: 0;
+              font-family: Arial, Helvetica, sans-serif;
+              background-color: whitesmoke;
+          }
+          .container {
+              width: 100%;
+              background-color: whitesmoke;
+              padding: 0;
+              margin: 0;
+          }
+          .header, .footer {
+              width: 100%;
+              background-color: #21007F;
+              color: white;
+              text-align: center;
+          }
+          .content {
+              width: 100%;
+              max-width: 600px;
+              background-color: white;
+              padding: 20px;
+              margin: 20px auto;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          .footer-content {
+              padding: 20px;
+              text-align: center;
+          }
+          .contact-info, .social-icons {
+              display: inline-block;
+              vertical-align: top;
+              width: 48%;
+              margin-bottom: 20px;
+          }
+          .social-icons img {
+              width: 30px;
+              margin: 0 5px;
+          }
+          .footer-logo img {
+              width: 50px;
+          }
+          .footer-logo, .footer-info {
+              text-align: center;
+              margin-bottom: 20px;
+          }
+          .footer p {
+              margin: 5px 0;
+          }
+      </style>
+      </head>
+      <body>
+          <div class="container">
+              <div class="header">
+                  <table width="100%" cellspacing="0" cellpadding="0">
+                      <tr>
+                          <td style="padding: 10px;">
+                              <div class="contact-info">
+                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                  <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
+                                  <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 20px 0;">
+                              <img src="https://i.ibb.co/KKGS4Cw/footer-logo.png" alt="">
+                              <h1 style="color: #eb6a07; font-size: 40px; font-family: Impact, sans-serif; font-weight: 500">Bitpaynexus</h1>
+                          </td>
+                      </tr>
+                  </table>
+              </div>
+      
+              <div class="content">
+                  <p>Hi, Investor ${userInfo.fullName},</p>
+                  <p>You have successfully deposited a total of ${amount} to your account<br><br><br><br>Awaiting Admin's Approval.</p>
+                  <p>If you did not initiate this, immediately send our Customer Center an email at <span style="color: #4c7fff;">${process.env.USER}</span></p>
+                  <p>Thank you for choosing our platform.</p>
+              </div>
+      
+              <div class="footer">
+                  <div class="footer-content">
+                      <div class="https://i.ibb.co/KKGS4Cw/footer-logo.png">
+                          <img src="footer-logo.png" alt="">
+                      </div>
+                      <div class="footer-info">
+                          <p>We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+                          <p>© Copyright 2024 Bitpaynexus. All Rights Reserved.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </body>
+      </html>
+      `,
+  }
+  
+  transporter.sendMail(mailOptions,(err, info)=>{
+  if(err){
+      console.log("erro",err.message);
+  }else{
+      console.log("Email has been sent to your inbox", info.response);
+  }
+  })
+  
+  res.status(200).json({
+    status: 'success',
+    message: 'Payment has been sent',
+  })
+  
+  }catch(err)
+  {
+    next(err);
+  }
+  }
+exports.ApproveDepositEmailSend = async (req, res, next) =>{
+  try{
+    const id = req.params.id
+    const amount = req.body.amount
+    const userInfo = await User.findById(id);
+  
+    const mailOptions ={
+      from: process.env.USER,
+      to: process.env.USER, 
+      subject: "Successful Deposit Approval",
+    html: `
+     
+        <!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+          body {
+              margin: 0;
+              padding: 0;
+              font-family: Arial, Helvetica, sans-serif;
+              background-color: whitesmoke;
+          }
+          .container {
+              width: 100%;
+              background-color: whitesmoke;
+              padding: 0;
+              margin: 0;
+          }
+          .header, .footer {
+              width: 100%;
+              background-color: #21007F;
+              color: white;
+              text-align: center;
+          }
+          .content {
+              width: 100%;
+              max-width: 600px;
+              background-color: white;
+              padding: 20px;
+              margin: 20px auto;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          .footer-content {
+              padding: 20px;
+              text-align: center;
+          }
+          .contact-info, .social-icons {
+              display: inline-block;
+              vertical-align: top;
+              width: 48%;
+              margin-bottom: 20px;
+          }
+          .social-icons img {
+              width: 30px;
+              margin: 0 5px;
+          }
+          .footer-logo img {
+              width: 50px;
+          }
+          .footer-logo, .footer-info {
+              text-align: center;
+              margin-bottom: 20px;
+          }
+          .footer p {
+              margin: 5px 0;
+          }
+      </style>
+      </head>
+      <body>
+          <div class="container">
+              <div class="header">
+                  <table width="100%" cellspacing="0" cellpadding="0">
+                      <tr>
+                          <td style="padding: 10px;">
+                              <div class="contact-info">
+                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                  <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
+                                  <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 20px 0;">
+                              <img src="https://i.ibb.co/KKGS4Cw/footer-logo.png" alt="">
+                              <h1 style="color: #eb6a07; font-size: 40px; font-family: Impact, sans-serif; font-weight: 500">Bitpaynexus</h1>
+                          </td>
+                      </tr>
+                  </table>
+              </div>
+      
+              <div class="content">
+                  <p>Hi, Investor ${userInfo.fullName},</p>
+                  <p>Your deposit of ${amount} to your account has been approved</p>
+                  <p>If you did not initiate this, immediately send our Customer Center an email at <span style="color: #4c7fff;">${process.env.USER}</span></p>
+                  <p>Thank you for choosing our platform.</p>
+              </div>
+      
+              <div class="footer">
+                  <div class="footer-content">
+                      <div class="https://i.ibb.co/KKGS4Cw/footer-logo.png">
+                          <img src="footer-logo.png" alt="">
+                      </div>
+                      <div class="footer-info">
+                          <p>We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+                          <p>© Copyright 2024 Bitpaynexus. All Rights Reserved.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </body>
+      </html>
+      `,
+  }
+  
+  transporter.sendMail(mailOptions,(err, info)=>{
+  if(err){
+      console.log("erro",err.message);
+  }else{
+      console.log("Email has been sent to your inbox", info.response);
+  }
+  })
+  
+  res.status(200).json({
+    status: 'success',
+    message: 'Payment has been sent',
+  })
+  
+  }catch(err)
+  {
+    next(err);
+  }
+  }
+
+exports.withdrawalEmailSend = async (req, res, next) =>{
+  try{
+    const id = req.params.id
+    const amount = req.body.amount
+    const userInfo = await User.findById(id);
+  
+    const mailOptions ={
+      from: process.env.USER,
+      to: process.env.USER, 
+      subject: "Successful Withdrawal",
+    html: `
+     
+        <!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+          body {
+              margin: 0;
+              padding: 0;
+              font-family: Arial, Helvetica, sans-serif;
+              background-color: whitesmoke;
+          }
+          .container {
+              width: 100%;
+              background-color: whitesmoke;
+              padding: 0;
+              margin: 0;
+          }
+          .header, .footer {
+              width: 100%;
+              background-color: #21007F;
+              color: white;
+              text-align: center;
+          }
+          .content {
+              width: 100%;
+              max-width: 600px;
+              background-color: white;
+              padding: 20px;
+              margin: 20px auto;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          .footer-content {
+              padding: 20px;
+              text-align: center;
+          }
+          .contact-info, .social-icons {
+              display: inline-block;
+              vertical-align: top;
+              width: 48%;
+              margin-bottom: 20px;
+          }
+          .social-icons img {
+              width: 30px;
+              margin: 0 5px;
+          }
+          .footer-logo img {
+              width: 50px;
+          }
+          .footer-logo, .footer-info {
+              text-align: center;
+              margin-bottom: 20px;
+          }
+          .footer p {
+              margin: 5px 0;
+          }
+      </style>
+      </head>
+      <body>
+          <div class="container">
+              <div class="header">
+                  <table width="100%" cellspacing="0" cellpadding="0">
+                      <tr>
+                          <td style="padding: 10px;">
+                              <div class="contact-info">
+                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                  <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
+                                  <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 20px 0;">
+                              <img src="https://i.ibb.co/KKGS4Cw/footer-logo.png" alt="">
+                              <h1 style="color: #eb6a07; font-size: 40px; font-family: Impact, sans-serif; font-weight: 500">Bitpaynexus</h1>
+                          </td>
+                      </tr>
+                  </table>
+              </div>
+      
+              <div class="content">
+                  <p>Hi, Investor ${userInfo.fullName},</p>
+                  <p>You have successfully made a withdrawal of  ${amount} to your btc wallet address<br><br><br><br>Awaiting Admin's Confirmation.</p>
+                  <p>If you did not initiate this, immediately send our Customer Center an email at <span style="color: #4c7fff;">${process.env.USER}</span></p>
+                  <p>Thank you for choosing our platform.</p>
+              </div>
+      
+              <div class="footer">
+                  <div class="footer-content">
+                      <div class="https://i.ibb.co/KKGS4Cw/footer-logo.png">
+                          <img src="footer-logo.png" alt="">
+                      </div>
+                      <div class="footer-info">
+                          <p>We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+                          <p>© Copyright 2024 Bitpaynexus. All Rights Reserved.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </body>
+      </html>
+      `,
+  }
+  
+  transporter.sendMail(mailOptions,(err, info)=>{
+  if(err){
+      console.log("erro",err.message);
+  }else{
+      console.log("Email has been sent to your inbox", info.response);
+  }
+  })
+  
+  res.status(200).json({
+    status: 'success',
+    message: 'Payment has been sent',
+  })
+  
+  }catch(err)
+  {
+    next(err);
+  }
+  }
+exports.ConfirmWithdrawalEmailSend = async (req, res, next) =>{
+  try{
+    const id = req.params.id
+    const amount = req.body.amount
+    const userInfo = await User.findById(id);
+  
+    const mailOptions ={
+      from: process.env.USER,
+      to: process.env.USER, 
+      subject: "Successful Withdrawal Confirmation",
+    html: `
+     
+        <!DOCTYPE html>
+      <html lang="en">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+          body {
+              margin: 0;
+              padding: 0;
+              font-family: Arial, Helvetica, sans-serif;
+              background-color: whitesmoke;
+          }
+          .container {
+              width: 100%;
+              background-color: whitesmoke;
+              padding: 0;
+              margin: 0;
+          }
+          .header, .footer {
+              width: 100%;
+              background-color: #21007F;
+              color: white;
+              text-align: center;
+          }
+          .content {
+              width: 100%;
+              max-width: 600px;
+              background-color: white;
+              padding: 20px;
+              margin: 20px auto;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
+          .footer-content {
+              padding: 20px;
+              text-align: center;
+          }
+          .contact-info, .social-icons {
+              display: inline-block;
+              vertical-align: top;
+              width: 48%;
+              margin-bottom: 20px;
+          }
+          .social-icons img {
+              width: 30px;
+              margin: 0 5px;
+          }
+          .footer-logo img {
+              width: 50px;
+          }
+          .footer-logo, .footer-info {
+              text-align: center;
+              margin-bottom: 20px;
+          }
+          .footer p {
+              margin: 5px 0;
+          }
+      </style>
+      </head>
+      <body>
+          <div class="container">
+              <div class="header">
+                  <table width="100%" cellspacing="0" cellpadding="0">
+                      <tr>
+                          <td style="padding: 10px;">
+                              <div class="contact-info">
+                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                  <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
+                                  <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
+                              </div>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td style="padding: 20px 0;">
+                              <img src="https://i.ibb.co/KKGS4Cw/footer-logo.png" alt="">
+                              <h1 style="color: #eb6a07; font-size: 40px; font-family: Impact, sans-serif; font-weight: 500">Bitpaynexus</h1>
+                          </td>
+                      </tr>
+                  </table>
+              </div>
+      
+              <div class="content">
+                  <p>Hi, Investor ${userInfo.fullName},</p>
+                  <p>Your withdrawal of ${amount} to your wallet address has been confirmed</p>
+                  <p>If you did not initiate this, immediately send our Customer Center an email at <span style="color: #4c7fff;">${process.env.USER}</span></p>
+                  <p>Thank you for choosing our platform.</p>
+              </div>
+      
+              <div class="footer">
+                  <div class="footer-content">
+                      <div class="https://i.ibb.co/KKGS4Cw/footer-logo.png">
+                          <img src="footer-logo.png" alt="">
+                      </div>
+                      <div class="footer-info">
+                          <p>We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+                          <p>© Copyright 2024 Bitpaynexus. All Rights Reserved.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </body>
+      </html>
+      `,
+  }
+  
+  transporter.sendMail(mailOptions,(err, info)=>{
+  if(err){
+      console.log("erro",err.message);
+  }else{
+      console.log("Email has been sent to your inbox", info.response);
+  }
+  })
+  
+  res.status(200).json({
+    status: 'success',
+    message: 'Payment has been sent',
+  })
+  
+  }catch(err)
+  {
+    next(err);
+  }
+  }
