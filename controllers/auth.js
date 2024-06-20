@@ -314,62 +314,111 @@ exports.AdminAproveEmailSand = async (req, res, next) =>{
       to: UserEmail.email,
       subject: "Successful Sign Up!",
     html: `
-   <!DOCTYPE html>
-<html lang="en">
-<head>
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body style="display: flex; align-items: center; justify-content: center; flex-direction: column; background-color: whitesmoke; height: 120vh; width: 100%;">
-    <div style="height: 30%; background-color: #21007F; width: 100%;">
-        <div style=" width: 100%; height: 18%; display: flex; align-items: space-around; justify-content: center;">
-            <div style=" width: 54%; height: 100%; display: flex; align-items: center; justify-content: flex-start;">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 26%;">
-                    <img src="Call.png" alt="">
-                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">+1 504-332-9455</p>
-                </div>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 33%;">
-                    <img src="Container.png" alt="">
-                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">support@bitpaynexus.com</p>
-                </div>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 40%;">
-                    <img src="loc.png" alt="">
-                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">18 Eastbourne Rd, United Kingdom</p>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: whitesmoke;
+        }
+        .container {
+            width: 100%;
+            background-color: whitesmoke;
+            padding: 0;
+            margin: 0;
+        }
+        .header, .footer {
+            width: 100%;
+            background-color: #21007F;
+            color: white;
+            text-align: center;
+        }
+        .content {
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-info, .social-icons {
+            display: inline-block;
+            vertical-align: top;
+            width: 48%;
+            margin-bottom: 20px;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 0 5px;
+        }
+        .footer-logo img {
+            width: 50px;
+        }
+        .footer-logo, .footer-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td style="padding: 10px;">
+                            <div class="contact-info">
+                                <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
+                                <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px 0;">
+                            <img src="https://i.ibb.co/KKGS4Cw/footer-logo.png" alt="">
+                            <h1 style="color: #eb6a07; font-size: 40px; font-family: Impact, sans-serif; font-weight: 500">Bitpaynexus</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    
+            <div class="content">
+                <p>Hi ${UserEmail.fullName},</p>
+                <p>Welcome to Bitpaynexus, your Number 1 online trading platform.<br><br>Your Trading account has been set up successfully.<br><br>You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.</p>
+                <p>For more enquiries, kindly contact your account manager or use our live chat support on our platform. You can also send a direct mail to us at <span style="color: #4c7fff;">${process.env.USER}</span></p>
+                <p>Thank you for choosing our platform. We wish you successful trading.</p>
+            </div>
+    
+            <div class="footer">
+                <div class="footer-content">
+                    <div class="https://i.ibb.co/KKGS4Cw/footer-logo.png">
+                        <img src="footer-logo.png" alt="">
+                    </div>
+                    <div class="footer-info">
+                        <p>We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+                        <p>© Copyright 2024 Bitpaynexus. All Rights Reserved.</p>
+                    </div>
                 </div>
             </div>
-            <div style=" width: 20%; height: 100%; display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
-                <img src="facebook.png" alt="" style="width: 30px;">
-                <img src="twitter.png" alt="" style="width: 30px;">
-                <img src="linkedin.png" alt="" style="width: 30px;">
-            </div>
         </div>
-        <div style=" width: 100%; height: 80%; display: flex; justify-content: center; align-items: center; gap: 5px;">
-            <img src="footer-logo.png.png" alt="">
-            <h1 style="color: #eb6a07; font-size: 50px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: 400;">Bitpaynexus</h1>
-        </div>
-    </div>
-    <div style="height: 45%; width: 100%; display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; gap:5px;">
-        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px; ">Hi ${UserEmail.fullName},</p>
-        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">Welcome to Bitpaynexus, your Number 1 online trading platform. <br><br> Your Trading account has been set up successfully <br><br>You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.</p>
-        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">For more enquiry kindly contact your account manager or write directly with our live chat support on our platform 
-            <br> or you can send a direct mail to us at <span style="color: #4c7fff;">${process.env.USER}</span></p>
-        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">Thank You for choosing our platform and we wish you a successful trading.
-</p>
-    </div>
-
-    </div>
-    <div style="height: 25%; background-color: #21007F; width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-        <div style="height: 60%; width: 30%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <img src="footer-logo.png.png" alt="" style="width: 50px;">
-            <p style="color: white; text-align: center; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
-        </div>
-        <div style="height: 20%; width: 30%;  display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <p style="color: white; text-align: center; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 100;">© Copyright 2024 Bitpaynexus field All Rights Reserved.</p>
-        </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
+    
      
       `,
   
@@ -586,59 +635,109 @@ exports.loginEmailSand = async (req, res, next) =>{
       to: UserEmail.email,
       subject: "Successful Login!",
     html: `
+
     <!DOCTYPE html>
-<html lang="en">
-<head>
+    <html lang="en">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body style="display: flex; align-items: center; justify-content: center; flex-direction: column; background-color: whitesmoke; height: 120vh; width: 100%;">
-    <div style="height: 30%; background-color: #21007F; width: 100%;">
-        <div style=" width: 100%; height: 18%; display: flex; align-items: space-around; justify-content: center;">
-            <div style=" width: 54%; height: 100%; display: flex; align-items: center; justify-content: flex-start;">
-                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 26%;">
-                    <img src="Call.png" alt="">
-                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">+1 504-332-9455</p>
-                </div>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 33%;">
-                    <img src="Container.png" alt="">
-                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">support@bitpaynexus.com</p>
-                </div>
-                <div style="display: flex; justify-content: center; align-items: center; gap: 5px; width: 40%;">
-                    <img src="loc.png" alt="">
-                    <p style="color: white; font-size: 16px; font-family: Arial, Helvetica, sans-serif;">18 Eastbourne Rd, United Kingdom</p>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: whitesmoke;
+        }
+        .container {
+            width: 100%;
+            background-color: whitesmoke;
+            padding: 0;
+            margin: 0;
+        }
+        .header, .footer {
+            width: 100%;
+            background-color: #21007F;
+            color: white;
+            text-align: center;
+        }
+        .content {
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-info, .social-icons {
+            display: inline-block;
+            vertical-align: top;
+            width: 48%;
+            margin-bottom: 20px;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 0 5px;
+        }
+        .footer-logo img {
+            width: 50px;
+        }
+        .footer-logo, .footer-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <table width="100%" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td style="padding: 10px;">
+                            <div class="contact-info">
+                                <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
+                                <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 20px 0;">
+                            <img src="https://i.ibb.co/KKGS4Cw/footer-logo.png" alt="">
+                            <h1 style="color: #eb6a07; font-size: 40px; font-family: Impact, sans-serif; font-weight: 500">Bitpaynexus</h1>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+    
+            <div class="content">
+                <p>Welcome back, ${UserEmail.fullName},</p>
+                <p>You have successfully logged in to Bitpaynexus<br><br><br><br>You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.</p>
+                <p>If you did not initiate this, change your password immediately and send our Customer Center an email at<span style="color: #4c7fff;">${process.env.USER}</span></p>
+                <p>Thank you for choosing our platform. We wish you successful trading.</p>
+            </div>
+    
+            <div class="footer">
+                <div class="footer-content">
+                    <div class="https://i.ibb.co/KKGS4Cw/footer-logo.png">
+                        <img src="footer-logo.png" alt="">
+                    </div>
+                    <div class="footer-info">
+                        <p>We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
+                        <p>© Copyright 2024 Bitpaynexus. All Rights Reserved.</p>
+                    </div>
                 </div>
             </div>
-            <div style=" width: 20%; height: 100%; display: flex; justify-content: flex-end; align-items: center; gap: 10px;">
-                <img src="facebook.png" alt="" style="width: 30px;">
-                <img src="twitter.png" alt="" style="width: 30px;">
-                <img src="linkedin.png" alt="" style="width: 30px;">
-            </div>
         </div>
-        <div style=" width: 100%; height: 80%; display: flex; justify-content: center; align-items: center; gap: 5px;">
-            <img src="footer-logo.png.png" alt="">
-            <h1 style="color: #eb6a07; font-size: 50px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-weight: 400;">Bitpaynexus</h1>
-        </div>
-    </div>
-    <div style="height: 45%; width: 100%; display: flex; align-items: flex-start; justify-content: flex-start; flex-direction: column; gap:5px;">
-        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px; ">Welcome back, ${UserEmail.fullName},</p>
-        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">You have successfully logged in to Bitpaynexus<br>
-        <p style="font-size: 20px; font-family: Arial, Helvetica, sans-serif; padding-left: 30px;">If you did not initiate this, change your password immediately and send our Customer Center an email at <span style="color: #4c7fff;">${process.env.USER}</span></p>
-    </div>
-
-    </div>
-    <div style="height: 25%; background-color: #21007F; width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-        <div style="height: 60%; width: 30%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <img src="footer-logo.png.png" alt="" style="width: 50px;">
-            <p style="color: white; text-align: center; font-size: 14px; font-family: Arial, Helvetica, sans-serif;">We bring the years, global experience, and stamina to guide our clients through new and often disruptive realities.</p>
-        </div>
-        <div style="height: 20%; width: 30%;  display: flex; align-items: center; justify-content: center; flex-direction: column;">
-            <p style="color: white; text-align: center; font-size: 14px; font-family: Arial, Helvetica, sans-serif; font-weight: 100;">© Copyright 2024 Bitpaynexus field All Rights Reserved.</p>
-        </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
      
       `,
   }
