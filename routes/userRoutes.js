@@ -27,6 +27,7 @@ Routers.route('/getallinvestment/:id').get(UserData.getUserInvestments)
 Routers.route('/getallinterest/:id').get(UserData.getUserInterests)
 Routers.route('/getalltransactions/:id').get(UserData.getAllTransactions)
 Routers.route('/getalluserplan/:id').get(UserData.getAllUserInvestmentPlans)
+Routers.route('/transferprofittoaccount/:id').post(UserData.transferProfitsToAcct)
 
 
 
