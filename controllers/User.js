@@ -695,3 +695,68 @@ exports.getAllUserInvestmentPlans = async (req, res) => {
     return res.status(500).json({ message: 'Server Error' });
   }
 };
+
+
+// exports.transferProfitsToAcct = async (req, res) =>{
+//   try{
+//     const id = req.params.id;
+
+//     const user = await User.findById(id);
+//     if(!user){
+//       return res.status(404).json({ message: 'User not found' });
+//     }
+//     const profit = user.totalProfit
+//     if(profit <= 0){
+//       return res.status(400).json({
+//         message: 'You have 0 profit. Choose a plan and invest to make profit'
+//       })
+//     }
+//     user.accountBalance += parseFloat(profit); 
+//     user.totalProfit -= parseFloat(profit); 
+//     await user.save();
+
+//     res.status(200).json({
+//       message: 'Profits transferred to account',
+//       data: user.accountBalance,
+//     })
+    
+//   }catch(err){
+//     res.status(500).json({ message: 'Server Error' });
+//   }
+// }
+
+exports.transferProfitsToAcct = async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    // Find the user by id
+    const user = await User.findById(id);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Check the user's profit
+    const profit = Number(user.totalProfit);
+    if (profit <= 0) {
+      return res.status(400).json({
+        message: 'You have 0 profit. Choose a plan and invest to make profit'
+      });
+    }
+
+    // Transfer the profit to account balance
+    user.accountBalance += profit;
+    user.totalProfit = 0; // Reset totalProfit to 0 after transfer
+
+    // Save the user with updated values
+    await user.save();
+
+    // Respond with success message
+    res.status(200).json({
+      message: 'Profits transferred to account',
+      data: user.accountBalance,
+    });
+  } catch (err) {
+    console.error('Error transferring profits:', err);
+    res.status(500).json({ message: 'Server Error', error: err.message });
+  }
+};
