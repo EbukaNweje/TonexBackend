@@ -759,7 +759,7 @@ exports.transferProfitsToAcct = async (req, res) => {
 
     // Respond with success message
     res.status(200).json({
-      message: 'Profits transferred to account',
+      message: 'Profits and bonus has been added to account balance successfully',
       data: user.accountBalance,
     });
   } catch (err) {
