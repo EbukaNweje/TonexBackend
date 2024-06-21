@@ -399,7 +399,7 @@ exports.AdminAproveEmailSand = async (req, res, next) =>{
     
             <div class="content">
                 <p>Hi ${UserEmail.fullName},</p>
-                <p>Welcome to Bitpaynexus, your Number 1 online trading platform.<br><br>Your Trading account has been set up successfully.<br><br>You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.</p>
+                <p>Your Trading account has been approved successfully.<br><br>Folle this link to login: https://www.bitpaynexus.com/auth51d2.html?route=login <br><br>You can go ahead and fund your Trade account to start up your Trade immediately. Deposit through Bitcoin.</p>
                 <p>For more enquiries, kindly contact your account manager or use our live chat support on our platform. You can also send a direct mail to us at <span style="color: #4c7fff;">${process.env.USER}</span></p>
                 <p>Thank you for choosing our platform. We wish you successful trading.</p>
             </div>
