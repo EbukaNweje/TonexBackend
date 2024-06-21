@@ -737,15 +737,22 @@ exports.transferProfitsToAcct = async (req, res) => {
 
     // Check the user's profit
     const profit = Number(user.totalProfit);
+    const bonus = Number(user.bonus);
     if (profit <= 0) {
-      return res.status(400).json({
+      return res.status(200).json({
+        message: 'You have 0 profit. Choose a plan and invest to make profit'
+      });
+    }
+    if (bonus <= 0) {
+      return res.status(200).json({
         message: 'You have 0 profit. Choose a plan and invest to make profit'
       });
     }
 
     // Transfer the profit to account balance
-    user.accountBalance += profit;
-    user.totalProfit = 0; // Reset totalProfit to 0 after transfer
+    user.accountBalance += profit + bonus;
+    user.totalProfit = 0; 
+    user.bonus = 0; 
 
     // Save the user with updated values
     await user.save();
