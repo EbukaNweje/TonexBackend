@@ -1373,7 +1373,7 @@ exports.withdrawalEmailSend = async (req, res, next) =>{
 exports.ConfirmWithdrawalEmailSend = async (req, res, next) =>{
   try{
     const id = req.params.id
-    const amount = req.body.amount
+    // const amount = req.body.amount
     const userInfo = await User.findById(id);
   
     const mailOptions ={
@@ -1465,7 +1465,7 @@ exports.ConfirmWithdrawalEmailSend = async (req, res, next) =>{
       
               <div class="content">
                   <p>Hi, Investor ${userInfo.fullName},</p>
-                  <p>Your withdrawal of ${amount} to your wallet address has been confirmed</p>
+                  <p>Your withdrawal to your wallet address has been confirmed</p>
                   <p>If you did not initiate this, immediately send our Customer Center an email at <span style="color: #4c7fff;">${process.env.USER}</span></p>
                   <p>Thank you for choosing our platform.</p>
               </div>
