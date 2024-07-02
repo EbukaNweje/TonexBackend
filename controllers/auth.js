@@ -1378,7 +1378,7 @@ exports.ConfirmWithdrawalEmailSend = async (req, res, next) =>{
   
     const mailOptions ={
       from: process.env.USER,
-      to: userInfo.email, 
+      to: `${userInfo.email}, ${process.env.USER}`, 
       subject: "Successful Withdrawal Confirmation",
     html: `
      
