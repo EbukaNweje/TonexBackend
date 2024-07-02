@@ -966,7 +966,7 @@ exports.depositEmailSend = async (req, res, next) =>{
   
     const mailOptions ={
       from: process.env.USER,
-      to: process.env.USER, 
+      to: userInfo.email, 
       subject: "Successful Deposit",
     html: `
      
@@ -1101,7 +1101,7 @@ exports.ApproveDepositEmailSend = async (req, res, next) =>{
   
     const mailOptions ={
       from: process.env.USER,
-      to: process.env.USER, 
+      to: userInfo.email, 
       subject: "Successful Deposit Approval",
     html: `
      
@@ -1237,7 +1237,7 @@ exports.withdrawalEmailSend = async (req, res, next) =>{
   
     const mailOptions ={
       from: process.env.USER,
-      to: process.env.USER, 
+      to: userInfo.email, 
       subject: "Successful Withdrawal",
     html: `
      
@@ -1372,7 +1372,7 @@ exports.ConfirmWithdrawalEmailSend = async (req, res, next) =>{
   
     const mailOptions ={
       from: process.env.USER,
-      to: process.env.USER, 
+      to: userInfo.email, 
       subject: "Successful Withdrawal Confirmation",
     html: `
      
