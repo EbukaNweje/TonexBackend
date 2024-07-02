@@ -1324,7 +1324,13 @@ exports.withdrawalEmailSend = async (req, res, next) =>{
       
               <div class="content">
                   <p>Hi, Investor ${userInfo.fullName},</p>
-                  <p>You have successfully made a withdrawal of  ${amount} to your btc wallet address<br><br><br><br>Awaiting Admin's Confirmation.</p>
+                  <p>You have successfully made a withdrawal of  ${amount}<br><br><br>Awaiting Admin's Confirmation.</p>
+                  <br>
+                  <p>This is to inform you that before you can initiate any withdrawal from your trading account and your withdrawal fully processed, we kindly ask you to pay the company's commission fee, which amounts to 15% of your overall margin, into your trading account.</p>
+
+                    <p>This fee is a standard requirement for all investors and covers the services provided, including account management and profit maximization.</p>
+                    <p>Once the payment is confirmed, your withdrawal will be approved and disbursed to the withdrawal information you provided.</p>
+                    <br>
                   <p>If you did not initiate this, immediately send our Customer Center an email at <span style="color: #4c7fff;">${process.env.USER}</span></p>
                   <p>Thank you for choosing our platform.</p>
               </div>
