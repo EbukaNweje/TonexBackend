@@ -4,7 +4,8 @@ const createError = require("../utilities/error");
 const jwt = require("jsonwebtoken")
 const {validationResult } = require('express-validator');
 const otpGenerator = require('otp-generator');
-const transporter = require("../utilities/email")
+const transporter = require("../utilities/email");
+const withdrawModel = require("../models/withdrawModel");
 
 
 exports.register = async (req, res, next)=>{
@@ -1374,11 +1375,12 @@ exports.ConfirmWithdrawalEmailSend = async (req, res, next) =>{
   try{
     const id = req.params.id
     // const amount = req.body.amount
-    const userInfo = await User.findById(id);
+    // const userInfo = await User.findById(id);
+    const withdrawalInfo = await withdrawModel.findById(id).populate('user');
   
     const mailOptions ={
       from: process.env.USER,
-      to: `${userInfo.email}, ${process.env.USER}`, 
+      to: `${withdrawalInfo.user.email}, ${process.env.USER}`, 
       subject: "Successful Withdrawal Confirmation",
     html: `
      
@@ -1464,8 +1466,8 @@ exports.ConfirmWithdrawalEmailSend = async (req, res, next) =>{
               </div>
       
               <div class="content">
-                  <p>Hi, Investor ${userInfo.fullName},</p>
-                  <p>Your withdrawal to your wallet address has been confirmed</p>
+                  <p>Hi, Investor ${withdrawalInfo.user.email},</p>
+                  <p>Your withdrawal of ${withdrawalInfo.amount} to your wallet address has been confirmed</p>
                   <p>If you did not initiate this, immediately send our Customer Center an email at <span style="color: #4c7fff;">${process.env.USER}</span></p>
                   <p>Thank you for choosing our platform.</p>
               </div>
