@@ -1373,10 +1373,10 @@ exports.withdrawalEmailSend = async (req, res, next) =>{
   }
 exports.ConfirmWithdrawalEmailSend = async (req, res, next) =>{
   try{
-    const id = req.params.id
+    const {withdrawId} = req.params
     // const amount = req.body.amount
     // const userInfo = await User.findById(id);
-    const withdrawalInfo = await withdrawModel.findById(id).populate('user');
+    const withdrawalInfo = await withdrawModel.findById(withdrawId).populate('user');
   
     const mailOptions ={
       from: process.env.USER,
