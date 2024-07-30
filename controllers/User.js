@@ -767,3 +767,17 @@ exports.transferProfitsToAcct = async (req, res) => {
     res.status(500).json({ message: 'Server Error', error: err.message });
   }
 };
+
+exports.getAllUserInvestments = async (req, res) => {
+  try {
+      const { id } = req.params;
+
+      // Fetch all investments associated with the user and populate the plan information
+      const investments = await investModel.find({ user: id }).populate('plan');
+
+      res.status(200).json({ message: 'Investments retrieved successfully', data: investments });
+  } catch (error) {
+      console.error('Error fetching investments:', error);
+      res.status(500).json({ error: error.message });
+  }
+};
