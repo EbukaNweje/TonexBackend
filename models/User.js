@@ -33,11 +33,11 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
 
-  address: {
-    type: String,
-    required: true,
+  // address: {
+  //   type: String,
+  //   required: true,
 
-  },
+  // },
 
   howdoyouhearabout: {
     type: String,
