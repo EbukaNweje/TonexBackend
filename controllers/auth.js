@@ -383,7 +383,7 @@ exports.AdminAproveEmailSand = async (req, res, next) =>{
                     <tr>
                         <td style="padding: 10px;">
                             <div class="contact-info">
-                                <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 208-380-0651</p>
                                 <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
                                 <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
                             </div>
@@ -545,7 +545,7 @@ exports.signupEmailSand = async (req, res, next) =>{
                     <tr>
                         <td style="padding: 10px;">
                             <div class="contact-info">
-                                <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 208-380-0651</p>
                                 <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
                                 <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
                             </div>
@@ -703,7 +703,7 @@ exports.loginEmailSand = async (req, res, next) =>{
                     <tr>
                         <td style="padding: 10px;">
                             <div class="contact-info">
-                                <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 208-380-0651</p>
                                 <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
                                 <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
                             </div>
@@ -864,7 +864,7 @@ exports.forgotPassword = async (req, res, next) => {
                             <tr>
                                 <td style="padding: 10px;">
                                     <div class="contact-info">
-                                        <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                        <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 208-380-0651</p>
                                         <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
                                         <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
                                     </div>
@@ -1037,7 +1037,7 @@ exports.depositEmailSend = async (req, res, next) =>{
                       <tr>
                           <td style="padding: 10px;">
                               <div class="contact-info">
-                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 208-380-0651</p>
                                   <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
                                   <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
                               </div>
@@ -1172,7 +1172,7 @@ exports.ApproveDepositEmailSend = async (req, res, next) =>{
                       <tr>
                           <td style="padding: 10px;">
                               <div class="contact-info">
-                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 208-380-0651</p>
                                   <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
                                   <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
                               </div>
@@ -1308,7 +1308,7 @@ exports.withdrawalEmailSend = async (req, res, next) =>{
                       <tr>
                           <td style="padding: 10px;">
                               <div class="contact-info">
-                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 208-380-0651</p>
                                   <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
                                   <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
                               </div>
@@ -1450,7 +1450,7 @@ exports.ConfirmWithdrawalEmailSend = async (req, res, next) =>{
                       <tr>
                           <td style="padding: 10px;">
                               <div class="contact-info">
-                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 504-332-9455</p>
+                                  <p><img src="https://i.ibb.co/JHCPcsm/Call.png" alt="" style="width: 20px;"> +1 208-380-0651</p>
                                   <p><img src="https://i.ibb.co/X8FBvY8/Container.png" alt="" style="width: 20px;"> support@bitpaynexus.com</p>
                                   <p><img src="https://i.ibb.co/1JTGL6y/loc.png" alt="" style="width: 20px;"> 18 Eastbourne Rd, United Kingdom</p>
                               </div>
