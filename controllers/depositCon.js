@@ -49,6 +49,38 @@ exports.deposit = async (req, res) => {
             const myTotal = Number(conversionRates);
             const btcAmount = newAmount / myTotal;
             roundedNumber = btcAmount.toFixed(9);
+        }else if (coin == "BNB") {
+            response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&precision=5`);
+            const conversionRates = response.data.ethereum.usd;
+            const myTotal = Number(conversionRates);
+            const btcAmount = newAmount / myTotal;
+            roundedNumber = btcAmount.toFixed(9);
+        }else if (coin == "TETHER ETH") {
+            response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&precision=5`);
+            const conversionRates = response.data.ethereum.usd;
+            const myTotal = Number(conversionRates);
+            const btcAmount = newAmount / myTotal;
+            roundedNumber = btcAmount.toFixed(9);
+        }else if (coin == "TETHER BNB") {
+            response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&precision=5`);
+            const conversionRates = response.data.ethereum.usd;
+            const myTotal = Number(conversionRates);
+            const btcAmount = newAmount / myTotal;
+            roundedNumber = btcAmount.toFixed(9);
+        }
+        else if (coin == "DOGECOIN") {
+            response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&precision=5`);
+            const conversionRates = response.data.ethereum.usd;
+            const myTotal = Number(conversionRates);
+            const btcAmount = newAmount / myTotal;
+            roundedNumber = btcAmount.toFixed(9);
+        }
+        else if (coin == "USDT TRC20") {
+            response = await axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd&precision=5`);
+            const conversionRates = response.data.ethereum.usd;
+            const myTotal = Number(conversionRates);
+            const btcAmount = newAmount / myTotal;
+            roundedNumber = btcAmount.toFixed(9);
         }
 
         const Depo = await depositModel.find()
