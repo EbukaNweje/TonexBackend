@@ -27,7 +27,7 @@ exports.deposit = async (req, res) => {
             });
         }
 
-        if (coin != "BTC" && coin != "ETH") {
+        if (coin != "BTC" && coin != "ETH" && coin != "BNB" && coin != "TETHER ETH" && coin != "TETHER BNB" && coin != "DOGECOIN" && coin != "USDT TRC20") {
             return res.status(404).json({
                 message: `Coin not available`
             });
