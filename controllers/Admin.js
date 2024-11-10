@@ -16,7 +16,7 @@ exports.register = async (req, res, next)=>{
       const { email } = req.body;
 
       User.findOne({ email }, async (err, user) => {
-        // console.log(user)
+        
         if (err) {
           return res.status(500).json({ error: err.message });
         }
@@ -175,7 +175,7 @@ exports.confirmWithdraw = async (req, res) => {
         // Return success response
         res.status(200).json({ message: 'withdrawal Approved successfully' });
     } catch (err) {
-        // Handle errors
+        // Handle errors to sho
         console.error(err);
         res.status(500).json({ message: 'Internal server error' });
     }
