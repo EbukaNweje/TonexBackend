@@ -3,7 +3,7 @@ const { confirmDeposit, confirmWithdraw, deleteoneDeposit } = require("../contro
 
 
 router.post('/confirm-deposit/:depositId', confirmDeposit)
-router.post('/deleteoneDeposit/:depositId', deleteoneDeposit)
+router.delete('/deleteoneDeposit/:depositId', deleteoneDeposit)
 router.post('/confirm-withdrawal/:withdrawId', confirmWithdraw)
 
 module.exports = router
