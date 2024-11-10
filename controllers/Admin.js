@@ -180,3 +180,18 @@ exports.confirmWithdraw = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 };
+
+exports.deleteoneWithdraw = async (req, res, next) =>{
+    try {
+        const WithdrawId = req.params.WithdrawId
+        const WithdrawDatadelete = await withdrawModel.findByIdAndDelete(WithdrawId)
+        
+        res.status(200).json({
+            message: "Withdraw Data have been deleted",
+            data: WithdrawDatadelete
+        })
+
+    }catch(err){
+        next(err)
+    }
+}
