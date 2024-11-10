@@ -120,6 +120,22 @@ exports.confirmDeposit = async (req, res) => {
 };
 
 
+exports.deleteoneDeposit = async (req, res, next) =>{
+    try {
+        const depositId = req.params.depositId
+        const DepositDatadelete = await depositModel.findByIdAndDelete(depositId)
+        
+        res.status(200).json({
+            message: "Deposit Data have been deleted",
+            data: DepositDatadelete
+        })
+
+    }catch(err){
+        next(err)
+    }
+}
+
+
 
 
 
